@@ -16,17 +16,17 @@ app.get('/generate', async (req: Request, res: Response) => {
         const filePath = `./public/${fileName}.mp3`;
         const randomStartTime = Math.floor(Math.random() * 120) + 1;
         ffmpeg(filePath).setStartTime(randomStartTime).setDuration(15).format('mp3')
-        .saveToFile(`./tmp/${fileName}-${randomStartTime}.mp3`).on('end', (output) => {
+        .saveToFile(`./assets/${fileName}-${randomStartTime}.mp3`).on('end', (output) => {
             console.log('done!');
         })
     }
 });
 
 app.get('/:fileName', async (req: Request, res: Response) => {
-    const TMP_PATH = './tmp';
+    const ROOT_PATH = './assets';
     const fileName = req.params.fileName;
     const files: string[] = [];
-    fs.readdirSync(TMP_PATH).forEach(file => {
+    fs.readdirSync(ROOT_PATH).forEach(file => {
         if(file.startsWith(fileName)){
             files.push(file);
         }
@@ -34,7 +34,7 @@ app.get('/:fileName', async (req: Request, res: Response) => {
 
     const randomFilesIndex = Math.floor(Math.random() * files.length) + 0;
     const choosenFileName = files[randomFilesIndex];
-    const filePath = `${TMP_PATH}/${choosenFileName}`;
+    const filePath = `${ROOT_PATH}/${choosenFileName}`;
     const stat = await getStat(filePath);
     res.writeHead(200, {
         'Content-Type': 'audio/mp3',
