@@ -20,6 +20,9 @@ const options: cors.CorsOptions = {
 
 app.use(cors(options));
 
+// Functions
+const shuffle = (array: any[]) => array.sort(() => Math.random() - 0.5);
+
 // Read library from local json file
 const rawLibrary = fs.readFileSync("./public/library.json", {
   encoding: "utf8",
@@ -62,8 +65,8 @@ app.get("/tracks/:id", async (req: Request, res: Response) => {
     }
   }
   choosenTracks.push(trackId);
-  console.log(trackId);
-  res.json(choosenTracks);
+
+  res.json(shuffle(choosenTracks));
 });
 
 // GET audio file for stem
