@@ -64,5 +64,23 @@
     "artist": "Red Hot Chili Peppers",
     "id": "9a635b65-7d7f-40d2-a68b-6e712f0937dc",
     "url": "https://www.youtube.com/watch?v=YlUKcNNmywk"
+  },
+  {
+    "name": "Believer",
+    "artist": "Imagine Dragons",
+    "id": "2d2aee41-6f5e-448c-a185-b6a6e903ade7",
+    "url": "https://www.youtube.com/watch?v=7wtfhZwyrcc"
+  },
+  {
+    "name": "Dance Monkey",
+    "artist": "Tones And I",
+    "id": "38dfe4f1-06cc-49ad-abc2-ab57b59ed605",
+    "url": "https://www.youtube.com/watch?v=q0hyYWKXF0Q"
+  },
+  {
+    "name": "See You Again",
+    "artist": "Wiz Khalifa",
+    "id": "58674266-5a52-4707-b54e-b9e01905f813",
+    "url": "https://www.youtube.com/watch?v=RgKAFK5djSk"
   }
 ]
