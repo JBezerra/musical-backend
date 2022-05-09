@@ -46,5 +46,23 @@
     "artist": "Michel Teló",
     "id": "7fc2a2eb-7ac5-461a-bdcb-26270fca8db6",
     "url": "https://www.youtube.com/watch?v=hcm55lU9knw"
+  },
+  {
+    "name": "A Praieira",
+    "artist": "Chico Science e Nação Zumbi",
+    "id": "92914095-0596-47d8-83f2-dea92d63b70f",
+    "url": "https://www.youtube.com/watch?v=jE6p22nz7CU"
+  },
+  {
+    "name": "Shape of You",
+    "artist": "Ed Sheeran",
+    "id": "5e0c4956-e413-4bfe-b965-1637f5c77a43",
+    "url": "https://www.youtube.com/watch?v=JGwWNGJdvx8"
+  },
+  {
+    "name": "Californication",
+    "artist": "Red Hot Chili Peppers",
+    "id": "9a635b65-7d7f-40d2-a68b-6e712f0937dc",
+    "url": "https://www.youtube.com/watch?v=YlUKcNNmywk"
   }
 ]
