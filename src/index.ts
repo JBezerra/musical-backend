@@ -9,7 +9,7 @@ const port = 3001;
 
 app.use(express.static("database"));
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000, https://stemgame.netlify.app"];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
