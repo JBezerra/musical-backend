@@ -69,32 +69,6 @@ app.get("/tracks/:id", async (req: Request, res: Response) => {
   res.json(shuffle(choosenTracks));
 });
 
-// GET audio file for stem
-app.get("/play/:id/:stem", async (req: Request, res: Response) => {
-  const trackId = req.params.id;
-  const stem = req.params.stem;
-  const findTrack = library.find((track: Track) => track.id === trackId);
-
-  if (!findTrack) {
-    res.status(404).send("File not found");
-  }
-
-  const ROOT_PATH = "./assets";
-  const filePath = `${ROOT_PATH}/${trackId}-${stem}.mp3`;
-
-  try {
-    const stat = await getStat(filePath);
-    res.writeHead(200, {
-      "Content-Type": "audio/mp3",
-      "Content-Length": stat.size,
-    });
-    const stream = fs.createReadStream(filePath);
-    stream.pipe(res);
-  } catch (error) {
-    res.status(500).send("Error while getting file");
-  }
-});
-
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
 });
