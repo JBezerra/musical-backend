@@ -1,16 +1,13 @@
-import ffmpeg from "fluent-ffmpeg";
 import fs from "fs";
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 
 import { Track } from "./interfaces";
 
-const getStat = require("util").promisify(fs.stat);
-
 const app: Express = express();
 const port = 3001;
 
-app.use(express.static("public"));
+app.use(express.static("database"));
 
 const allowedOrigins = ["http://localhost:3000"];
 
@@ -24,7 +21,7 @@ app.use(cors(options));
 const shuffle = (array: any[]) => array.sort(() => Math.random() - 0.5);
 
 // Read library from local json file
-const rawLibrary = fs.readFileSync("./public/library.json", {
+const rawLibrary = fs.readFileSync("./database/library.json", {
   encoding: "utf8",
   flag: "r",
 });
