@@ -1,11 +1,14 @@
 import fs from "fs";
+import dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 
 import { Track } from "./interfaces";
 
+dotenv.config();
+
 const app: Express = express();
-const port = 3001;
+const port = process.env.port || 3001;
 
 app.use(express.static("database"));
 
